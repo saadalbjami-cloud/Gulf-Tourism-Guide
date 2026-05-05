@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>زيارة قطر | الوجهة السياحية المثالية</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary-color: #6F0B20; /* لون أحمر قطر */
+      --secondary-color: #8A8B8C; /* لون رمادي */
+      --accent-color: #D79922; /* لون ذهبي */
+      --dark-color: #1A1A1D;
+      --light-color: #F8F9FA;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+        body {
+      font-family: 'Tajawal', sans-serif;
+      background-color: var(--light-color);
+      color: var(--dark-color);
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header Styles */
+    header {
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo img {
+      height: 50px;
+    }
+    
+    .logo-text {
+      margin-right: 15px;
+    }
+    
+    .logo-text h1 {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      font-weight: 700;
+    }
+    
+    .logo-text p {
+      font-size: 0.8rem;
+      color: var(--secondary-color);
+    }
+    
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+    
+    nav ul li {
+      margin-left: 20px;
+    }
+    
+    nav ul li a {
+      color: var(--dark-color);
+      text-decoration: none;
+      font-weight: 500;
+      padding: 5px 10px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    nav ul li a:hover {
+      color: var(--primary-color);
+    }
+    
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: var(--primary-color);
+      bottom: -5px;
+      right: 0;
+      transition: width 0.3s ease;
+    }
+    
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1518684079-3c830dcef090?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+    
+    .hero-content {
+      max-width: 800px;
+      padding: 0 20px;
+    }
+    
+    .hero-content h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+    
+    .search-bar {
+      background-color: white;
+      border-radius: 50px;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .search-bar input {
+      flex: 1;
+      border: none;
+      padding: 10px;
+      font-family: 'Tajawal', sans-serif;
+      font-size: 1rem;
+      outline: none;
+    }
+    
+    .search-bar button {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      padding: 10px 25px;
+      cursor: pointer;
+      font-family: 'Tajawal', sans-serif;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .search-bar button:hover {
+      background-color: #5a091a;
+    }
+    
+    /* Categories Section */
+    .categories {
+      padding: 80px 0;
+      background-color: white;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    
+    .section-title h2 {
+      font-size: 2.5rem;
+      color: var(--dark-color);
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      width: 80px;
+      height: 4px;
+      background-color: var(--primary-color);
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    
+    .category-card {
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      position: relative;
+      height: 350px;
+    }
+    
+    .category-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+    
+    .category-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .category-card:hover img {
+      transform: scale(1.05);
+    }
+    
+    .category-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+      padding: 20px;
+      color: white;
+    }
+    
+    .category-overlay h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+    
+    .category-overlay a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+    }
+    
+    .category-overlay a i {
+      margin-right: 5px;
+    }
+    
+    /* Places Section */
+    .places-section {
+      padding: 80px 0;
+      background-color: #f8f9fa;
+    }
+    
+    .places-tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 40px;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    .tab-btn {
+      padding: 15px 30px;
+      background: none;
+      border: none;
+      font-family: 'Tajawal', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--secondary-color);
+      cursor: pointer;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    
+    .tab-btn.active {
+      color: var(--primary-color);
+    }
+    
+    .tab-btn.active::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      background-color: var(--primary-color);
+      bottom: -1px;
+      left: 0;
+    }
+    
+    .tab-content {
+      display: none;
+    }
+    
+    .tab-content.active {
+      display: block;
+    }
+    
+    .places-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    
+    .place-card {
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .place-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    .place-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    
+    .place-info {
+      padding: 20px;
+    }
+    
+    .place-info h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: var(--dark-color);
+    }
+    
+    .place-meta {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      color: var(--secondary-color);
+      font-size: 0.9rem;
+    }
+    
+    .place-meta span {
+      display: flex;
+      align-items: center;
+      margin-left: 15px;
+    }
+    
+    .place-meta i {
+      margin-right: 5px;
+      color: var(--accent-color);
+    }
+    
+    .place-description {
+      color: #666;
+      margin-bottom: 15px;
+      font-size: 0.95rem;
+    }
+    
+    .place-rating {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    .stars {
+      color: var(--accent-color);
+      margin-left: 10px;
+    }
+    
+    .rating-number {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 3px 8px;
+      border-radius: 5px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+    
+    .view-btn {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .view-btn:hover {
+      background-color: #5a091a;
+    }
+    
+    /* Filter Section */
+    .filter-section {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+    
+    .filter-row {
+      display: flex;
+      gap: 20px;
+    }
+    
+    .filter-group {
+      flex: 1;
+      margin-bottom: 15px;
+    }
+    
+    .filter-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--dark-color);
+    }
+    
+    .filter-group select, 
+    .filter-group input {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-family: 'Tajawal', sans-serif;
+      font-size: 1rem;
+    }
+    
+    .filter-btn {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 5px;
+      font-family: 'Tajawal', sans-serif;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      align-self: flex-end;
+    }
+    
+    .filter-btn:hover {
+      background-color: #5a091a;
+    }
+    
+    /* Newsletter Section */
+    .newsletter {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 60px 0;
+      text-align: center;
+    }
+    
+    .newsletter h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    
+    .newsletter p {
+      max-width: 600px;
+      margin: 0 auto 30px;
+      font-size: 1.1rem;
+    }
+    
+    .newsletter-form {
+      display: flex;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    
+    .newsletter-form input {
+      flex: 1;
+      padding: 15px;
+      border: none;
+      border-radius: 5px 0 0 5px;
+      font-family: 'Tajawal', sans-serif;
+      font-size: 1rem;
+    }
+    
+    .newsletter-form button {
+      background-color: var(--accent-color);
+      color: var(--dark-color);
+      border: none;
+      padding: 0 25px;
+      border-radius: 0 5px 5px 0;
+      font-family: 'Tajawal', sans-serif;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .newsletter-form button:hover {
+      background-color: #e6b422;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: var(--dark-color);
+      color: white;
+      padding: 60px 0 20px;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    
+    .footer-column h3 {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .footer-column h3::after {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 3px;
+      background-color: var(--primary-color);
+      bottom: 0;
+      right: 0;
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-links a {
+      color: #ddd;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      color: var(--accent-color);
+      padding-right: 5px;
+    }
+    
+    .footer-contact p {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .footer-contact i {
+      margin-left: 10px;
+      color: var(--accent-color);
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      background-color: var(--primary-color);
+      transform: translateY(-3px);
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .hero-content h1 {
+        font-size: 2.8rem;
+      }
+      
+      .filter-row {
+        flex-direction: column;
+      }
+      
+      .filter-btn {
+        width: 100%;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+      }
+      
+      .logo {
+        margin-bottom: 15px;
+      }
+      
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      nav ul li {
+        margin: 5px 10px;
+      }
+      
+      .hero {
+        height: 60vh;
+      }
+      
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+      
+      .section-title h2 {
+        font-size: 2rem;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .hero-content h1 {
+        font-size: 1.8rem;
+      }
+      
+      .search-bar {
+        flex-direction: column;
+        background: none;
+        padding: 0;
+      }
+      
+      .search-bar input {
+        width: 100%;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        padding: 12px;
+      }
+      
+      .search-bar button {
+        width: 100%;
+        border-radius: 5px;
+      }
+      
+      .newsletter-form {
+        flex-direction: column;
+      }
+      
+      .newsletter-form input {
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+      
+      .newsletter-form button {
+        border-radius: 5px;
+        padding: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <div class="logo">
+        <div class="logo-text">
+          <h1>Visit Qatar</h1>
+          <p>Discover the beauty of Doha</p>
+        </div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Flag_of_Qatar.svg/1200px-Flag_of_Qatar.svg.png" alt="Qatar Flag" style="height: 40px;">
+      </div>
+      
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#places">Places</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Explore Qatar: Where Heritage Meets Modernity</h1>
+      <p>Discover the best tourist destinations in Qatar, from world-class museums to stunning beaches</p>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="categories">
+    <div class="container">
+      <div class="section-title">
+        <h2>Discover Qatar</h2>
+      </div>
+      
+      <div class="categories-grid">
+        <div class="category-card">
+          <img src="https://mashrabya.com/upload/202208151833%D8%AF%D9%88%D8%AD%D8%A9.webp" alt="Museums in Qatar">
+          <div class="category-overlay">
+            <h3>Doha</h3>
+            <a href="https://maps.app.goo.gl/YiFsiGBq9k3znESKA">Explore <i class="fas fa-arrow-left"></i></a>
+          </div>
+        </div>
+        
+        <div class="category-card">
+          <img src="https://visitqatar.com/content/dam/things-to-do/explorest-2022/ilhan/_DSC2459.jpg/_jcr_content/renditions/medium-1280px.jpeg" alt="Landmarks in Qatar">
+          <div class="category-overlay">
+            <h3>Al Khor</h3>
+            <a href="https://maps.app.goo.gl/CWyPFASiQnBJfNuq5">Explore <i class="fas fa-arrow-left"></i></a>
+          </div>
+        </div>
+        
+        <div class="category-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Al-Wakra.jpg" alt="Hotels in Qatar">
+          <div class="category-overlay">
+            <h3>Al Wakrah</h3>
+            <a href="https://maps.app.goo.gl/c6LJUULAJiQpmASD6">Explore <i class="fas fa-arrow-left"></i></a>
+          </div>
+        </div>
+        
+        <div class="category-card">
+          <img src="https://www.lusail.com/wp-content/uploads/2024/07/LUSAIL-THATS-MY-ADDRESS.jpg" alt="Restaurants in Qatar">
+          <div class="category-overlay">
+            <h3>Lusail</h3>
+            <a href="https://maps.app.goo.gl/wNqnqg5JokELgsPf9">Explore <i class="fas fa-arrow-left"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Places Section -->
+  <section class="places-section" id="places">
+    <div class="container">
+      <div class="section-title">
+        <h2>Top Places in Qatar</h2>
+      </div>
+      
+      <div class="places-tabs">
+        <button class="tab-btn active" data-tab="hotels">Hotels</button>
+        <button class="tab-btn" data-tab="restaurants">Restaurants</button>
+        <button class="tab-btn" data-tab="activities">Entertainment</button>
+      </div>
+      
+      <!-- Hotels Tab -->
+      <div class="tab-content active" id="hotels-tab">
+        <div class="places-grid">
+          <!-- Hotel 1 -->
+          <div class="place-card">
+            <img src="https://lh3.googleusercontent.com/p/AF1QipPWsD8iYM_ANn2Gj6hcLFOGpDX5pV739iontUY=w408-h438-k-no" alt="Centara Marina Hotel">
+            <div class="place-info">
+              <h3>Centara Marina Hotel</h3>
+              <div class="place-meta">
+                <span><i class="fas fa-map-marker-alt"></i> Lusail</span>
+                <span><i class="fas fa-dollar-sign"></i> Moderate</span>
+              </div>
+              <p class="place-description">This elegant and upscale hotel is located in preserved heritage houses overlooking the Gulf.</p>
+              <div class="place-rating">
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <span class="rating-number">9.4</span>
+              </div>
+              <a href="https://maps.app.goo.gl/8KZUZuLFC8dQFMgR8" class="view-btn">View Details</a>
+            </div>
+          </div>
+
+          <!-- Hotel 2 -->
+          <div class="place-card">
+            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/118203077.jpg?k=7b978fbc29806378d4ed439fde8d11490f03b2d2611992a9c5d67bb25d8fe907&o=&hp=1" alt="Mondrian Doha Hotel">
+            <div class="place-info">
+              <h3>Mondrian Doha Hotel</h3>
+              <div class="place-meta">
+                <span><i class="fas fa-map-marker-alt"></i> Doha</span>
+                <span><i class="fas fa-dollar-sign"></i> Luxury</span>
+              </div>
+              <p class="place-description">A 5-star hotel offering stunning views of the Arabian Gulf with unique interior design.</p>
+              <div class="place-rating">
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <span class="rating-number">9.2</span>
+              </div>
+              <a href="https://maps.app.goo.gl/3VFoL9QT72KFVGWW7" class="view-btn">View Details</a>
+            </div>
+          </div>
+          
+          <!-- Hotel 3 -->
+          <div class="place-card">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AB5caB9StWwmAbqBWvJPgzthEwhT5cCQxbIhoJ1HgvRilRjedZRdTRE_Ya7bcFQLrcI-2IRRVeRmiXidqm3xoTCEKzgnT0Zfd0gOjFN3waeL-Hq-LQz3JS0tQKZtKGrwODb6c9RMwbDCTg=w203-h203-k-no" alt="Souq Al Wakrah Hotel">
+            <div class="place-info">
+              <h3>Souq Al Wakrah Qatar by Tivoli</h3>
+              <div class="place-meta">
+                <span><i class="fas fa-map-marker-alt"></i> Al Wakrah</span>
+                <span><i class="fas fa-dollar-sign"></i> Moderate</span>
+              </div>
+              <p class="place-description">This elegant and upscale hotel is located in preserved heritage houses overlooking the Gulf, with direct access to a public beach.</p>
+              <div class="place-rating">
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <span class="rating-number">9.4</span>
+              </div>
+              <a href="https://maps.app.goo.gl/5V6H2AvQH3HNMBUW9" class="view-btn">View Details</a>
+            </div>
+          </div>
+          
+          <!-- Hotel 4 -->
+          <div class="place-card">
+            <img src="https://al-sultan-beach-resort-al-khor.albooked.com/data/Photos/OriginalPhoto/15830/1583066/1583066861/Tio-Sea-Resort-Al-Khor-Exterior.JPEG" alt="Sultan Hotel">
+            <div class="place-info">
+              <h3>Sultan Hotel</h3>
+              <div class="place-meta">
+                <span><i class="fas fa-map-marker-alt"></i> Al Khor</span>
+                <span><i class="fas fa-dollar-sign"></i> Budget</span>
+              </div>
+              <p class="place-description">Features a central location in the heart of Doha and offers elegant rooms with modern facilities.</p>
+              <div class="place-rating">
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                </div>
+                <span class="rating-number">8.1</span>
+              </div>
+              <a href="https://maps.app.goo.gl/c5LgMnQy2UvxnMBJ9" class="view-btn">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+      <!-- Restaurants Tab -->
+      <div class="tab-content" id="restaurants-tab">
+        <div class="places-grid">
+          <!-- Restaurant 1 -->
+          <div class="place-card">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AB5caB-sYk-T5yiYsRSFOdN_G_sCXh37_yxTZ0L226vzMvooSMsEm9C6jJ4a6RItqwaUmQzloOa9ai84kOx9jABIVWitrgOIE6_O7N9TTZ3Mf5xVyOPSgKKP0DQUZvJd1eOZrgwbuJkH=w203-h264-k-no" alt="Idam Restaurant">
+            <div class="place-info">
+              <h3>Idam Restaurant</h3>
+              <div class="place-meta">
+                <span><i class="fas fa-map-marker-alt"></i> Doha</span>
+                <span><i class="fas fa-dollar-sign"></i> Luxury</span>
+              </div>
+              <p class="place-description">Serves traditional Qatari cuisine in a modern setting with waterfront views.</p>
+              <div class="place-rating">
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <span class="rating-number">9.5</span>
+              </div>
+              <a href="https://maps.app.goo.gl/upDGEK1sSNr9a2E77" class="view-btn">View Details</a>
+            </div>
+          </div>
+          
+          <!-- Restaurant 2 -->
+          <div class="place-card">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AB5caB-vdtf9xIU4B9uHOXwBCBYHA8IpHZxIlbyypiTnSBgocTZ6Xk0bBrUekqnTWjceVn7t4wwi-4OhRdgi2PhMgkT_RYTzKDupX8ThYCx4EyPOLieYlGw6ilSC05qYO2p7K-hMiO58=w426-h240-k-no" alt="Zaman Al Khair Restaurant">
+            <div class="place-info">
+              <h3>Zaman Al Khair Restaurant</h3>
+              <div class="place-meta">
+                <span><i class="fas fa-map-marker-alt"></i> Al Wakrah</span>
+                <span><i class="fas fa-dollar-sign"></i> Moderate</span>
+              </div>
+              <p class="place-description">Offers a variety of local and international dishes in a warm, family-friendly atmosphere.</p>
+              <div class="place-rating">
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span class="rating-number">9.0</span>
+              </div>
+              <a href="https://maps.app.goo.gl/vM9JaNk6v7jxnPbv8" class="view-btn">View Details</a>
+            </div>
+          </div>
+
+          <!-- Restaurant 3 -->
+          <div class="place-card">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AB5caB_IzZf3MiMgFyeSwymcR7cenlrvP5zYeS8yg8f5RhCghmsRW_NPsS6HNUVhBr4OXPsXKBRsGmk9Iy9aeVFko_hgU-Y7WaSksWmkeQxOu8XfvENAjcJzgChGEaSfrvQdvQJb7kY=w203-h152-k-no" alt="220 Restaurant">
+            <div class="place-info">
+              <h3>220 Restaurant</h3>
+              <div class="place-meta">
+                <span><i class="fas fa-map-marker-alt"></i> Al Khor</span>
+                <span><i class="fas fa-dollar-sign"></i> Budget</span>
+              </div>
+              <p class="place-description">Serves the best burgers and fast food with a modern, stylish design.</p>
+              <div class="place-rating">
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                </div>
+                <span class="rating-number">8.0</span>
+              </div>
+              <a href="https://maps.app.goo.gl/MobJFS15ppxoxBt4A" class="view-btn">View Details</a>
+            </div>
+          </div>
+
+          <!-- Restaurant 4 -->
+          <div class="place-card">
+            <img src="https://media.safarway.com/content/7a3d8aba-c532-4cf0-b21e-5ab53e2b408e_lg.jpg" alt="Arabesque Restaurant">
+            <div class="place-info">
+              <h3>Arabesque Restaurant</h3>
+              <div class="place-meta">
+                <span><i class="fas fa-map-marker-alt"></i> Lusail</span>
+                <span><i class="fas fa-dollar-sign"></i> Luxury</span>
+              </div>
+              <p class="place-description">Offers a wide selection of Arabic and international cuisine in a comfortable family atmosphere.</p>
+              <div class="place-rating">
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span class="rating-number">8.3</span>
+              </div>
+              <a href="https://maps.app.goo.gl/z2WA6N9pd9iW7iEW8" class="view-btn">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Activities Tab -->
+      <div class="tab-content" id="activities-tab">
+        <div class="places-grid">
+          <!-- Activity 1 -->
+          <div class="place-card">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AB5caB8_iGBoOvOVyyYXMHy-kSRXNoWQy6cXFwKWZlRnr81hYQF3DtpMwcEjJaZq9ECjcqlRAf7zwWvmRmv16EzvKuyYBm3Y_PouW-NJSROIpkyOGeNgOcZ47pmEoJfRMq5Z7T5_TDLTGw=w203-h123-k-no" alt="Museum of Islamic Art">
+            <div class="place-info">
+              <h3>Museum of Islamic Art</h3>
+              <div class="place-meta">
+                <span><i class="fas fa-map-marker-alt"></i> Doha</span>
+                <span><i class="fas fa-clock"></i> 9 AM - 7 PM</span>
+              </div>
+              <p class="place-description">Houses one of the world's most complete collections of Islamic art, with pieces dating back 1400 years.</p>
+              <div class="place-rating">
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span class="rating-number">9.1</span>
+              </div>
+              <a href="https://maps.app.goo.gl/QugLxQ8UhyjQRHDS9" class="view-btn">View Details</a>
+            </div>
+          </div>
+          
+          <!-- Activity 2 -->
+          <div class="place-card">
+            <img src="https://stadiumdb.com/pictures/stadiums/qat/al_wakrah_stadium/al_wakrah_stadium25.jpg" alt="South Stadium Park">
+            <div class="place-info">
+              <h3>South Stadium Park</h3>
+              <div class="place-meta">
+                <span><i class="fas fa-map-marker-alt"></i> Al Wakrah</span>
+                <span><i class="fas fa-clock"></i> All day</span>
+              </div>
+              <p class="place-description">A beautiful public park located in Al Wakrah city near the sports stadium, providing a comfortable green space for families and visitors.</p>
+              <div class="place-rating">
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span class="rating-number">9.0</span>
+              </div>
+              <a href="https://maps.app.goo.gl/efWQ3aA4hr15g3K16" class="view-btn">View Details</a>
+            </div>
+          </div>
+
+          <!-- Activity 3 -->
+          <div class="place-card">
+            <img src="https://visitqatar.com/adobe/dynamicmedia/deliver/dm-aid--bf6567ec-dc20-4564-a7e8-a8b9a831a143/gims-lusail-boulevard.jpg?quality=75&width=800&preferwebp=true" alt="Lusail Boulevard">
+            <div class="place-info">
+              <h3>Lusail Boulevard</h3>
+              <div class="place-meta">
+                <span><i class="fas fa-map-marker-alt"></i> Lusail</span>
+                <span><i class="fas fa-clock"></i> All day</span>
+              </div>
+              <p class="place-description">An exceptional walking experience between modernity and nature in the heart of Lusail.</p>
+              <div class="place-rating">
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span class="rating-number">9.3</span>
+              </div>
+              <a href="https://maps.app.goo.gl/ncQ5Pys3Q4peAFCk7" class="view-btn">View Details</a>
+            </div>
+          </div>
+          
+          <!-- Activity 4 -->
+          <div class="place-card">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AB5caB_2_C68yI1MRX-YkQnJfdrJYToJTsoYSNEWM8gDKDjjhx4etHskQOx1MVluNgrIKRKODZuOuiAJ0cekkcauufvLAXIFo1Pv-cEZ5Ry9AsuFT1RjeSPbUYX-jXGlJXuqKr0EzPmi=w203-h152-k-no" alt="Al Khor Corniche">
+            <div class="place-info">
+              <h3>Al Khor Corniche</h3>
+              <div class="place-meta">
+                <span><i class="fas fa-map-marker-alt"></i> Al Khor</span>
+                <span><i class="fas fa-clock"></i> All day</span>
+              </div>
+              <p class="place-description">One of the most beautiful tourist and recreational destinations in Al Khor city, combining natural charm with modern design.</p>
+              <div class="place-rating">
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                </div>
+                <span class="rating-number">8.6</span>
+              </div>
+              <a href="https://maps.app.goo.gl/GUYyuUjHM16enPdM9" class="view-btn">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="newsletter">
+    <div class="container">
+      <h2>Subscribe to Our Newsletter</h2>
+      <p>Get the latest offers and updates about the best places in Qatar directly to your email</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email">
+        <button type="submit">Subscribe Now</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>About Visit Qatar</h3>
+          <p>A comprehensive tourism platform aimed at introducing visitors to the best destinations, hotels, restaurants and activities in Qatar.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#places">Places</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Tour Guide</h3>
+          <ul class="footer-links">
+            <li><a href="#">Top 10 Hotels</a></li>
+            <li><a href="#">Best Restaurants</a></li>
+            <li><a href="#">Tourist Attractions</a></li>
+            <li><a href="#">Family Activities</a></li>
+            <li><a href="#">Photography Spots</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Contact Us</h3>
+          <div class="footer-contact">
+            <p><i class="fas fa-map-marker-alt"></i> Tabuk, Saudi Arabia</p>
+            <p><i class="fas fa-phone"></i> +966 1234 5678</p>
+            <p><i class="fas fa-envelope"></i> info@visitqatar.qa</p>
+          </div>
+        </div>
+      </div>
+      
+      <style>
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            background: transparent;
+            color: white;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            position: relative;
+            border: none;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .back-btn:hover {
+            color: #000;
+        }
+
+        .back-btn i {
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .back-btn:hover i {
+            transform: translateX(-5px);
+        }
+
+        .back-btn::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background-color: white;
+            transition: width 0.3s ease;
+        }
+
+        .back-btn:hover::after {
+            width: 100%;
+            right: auto;
+            left: 0;
+        }
+      </style>
+
+      <a href="index.html" class="back-btn">
+          Back to Home <i class="fas fa-arrow-left"></i>
+      </a>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Visit Saudi Arabia. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Tab Switching Functionality
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove active class from all buttons and contents
+        tabBtns.forEach(btn => btn.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+        
+        // Add active class to clicked button
+        btn.classList.add('active');
+        
+        // Show corresponding content
+        const tabId = btn.getAttribute('data-tab');
+        document.getElementById(`${tabId}-tab`).classList.add('active');
+      });
+    });
+    
+    // Filter Functionality (simplified)
+    const filterBtn = document.querySelector('.filter-btn');
+    
+    filterBtn.addEventListener('click', () => {
+      alert('Filters applied successfully!');
+      // In a real application, you would filter the displayed items here
+    });
+    
+    // Newsletter Form Submission
+    const newsletterForm = document.querySelector('.newsletter-form');
+    
+    newsletterForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = newsletterForm.querySelector('input').value;
+      if (email) {
+        alert(`Thank you for subscribing! Newsletter will be sent to ${email}`);
+        newsletterForm.reset();
+      } else {
+        alert('Please enter a valid email');
+      }
+    });
+  </script>
+</body>
+</html>
