@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>زيارة الإمارات | الوجهة السياحية المثالية</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary-color: #FF0000; /* أحمر علم الإمارات */
+      --secondary-color: #000000; /* أسود */
+      --accent-color: #009739; /* أخضر */
+      --gold-color: #FFD700; /* ذهبي */
+      --dark-color: #1A1A1D;
+      --light-color: #F8F9FA;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background-color: var(--light-color);
+      color: var(--dark-color);
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header Styles */
+    header {
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo img {
+      height: 50px;
+    }
+    
+    .logo-text {
+      margin-right: 15px;
+    }
+    
+    .logo-text h1 {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      font-weight: 700;
+    }
+    
+    .logo-text p {
+      font-size: 0.8rem;
+      color: var(--secondary-color);
+    }
+    
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+    
+    nav ul li {
+      margin-left: 20px;
+    }
+    
+    nav ul li a {
+      color: var(--dark-color);
+      text-decoration: none;
+      font-weight: 500;
+      padding: 5px 10px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    nav ul li a:hover {
+      color: var(--primary-color);
+    }
+    
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: var(--primary-color);
+      bottom: -5px;
+      right: 0;
+      transition: width 0.3s ease;
+    }
+    
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://mufhras.com/wp-content/uploads/2022/11/jhggg.jpg') center/cover no-repeat;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+    
+    .hero-content {
+      max-width: 800px;
+      padding: 0 20px;
+    }
+    
+    .hero-content h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+    
+    .search-bar {
+      background-color: white;
+      border-radius: 50px;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .search-bar input {
+      flex: 1;
+      border: none;
+      padding: 10px;
+      font-family: 'Tajawal', sans-serif;
+      font-size: 1rem;
+      outline: none;
+    }
+    
+    .search-bar button {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      padding: 10px 25px;
+      cursor: pointer;
+      font-family: 'Tajawal', sans-serif;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .search-bar button:hover {
+      background-color: #cc0000;
+    }
+    
+    /* Categories Section */
+    .categories {
+      padding: 80px 0;
+      background-color: white;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    
+    .section-title h2 {
+      font-size: 2.5rem;
+      color: var(--dark-color);
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      width: 80px;
+      height: 4px;
+      background-color: var(--primary-color);
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    
+    .category-card {
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      position: relative;
+      height: 350px;
+    }
+    
+    .category-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+    
+    .category-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .category-card:hover img {
+      transform: scale(1.05);
+    }
+    
+    .category-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+      padding: 20px;
+      color: white;
+    }
+    
+    .category-overlay h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+    
+    .category-overlay a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+    }
+    
+    .category-overlay a i {
+      margin-right: 5px;
+    }
+    
+    /* Places Section */
+    .places-section {
+      padding: 80px 0;
+      background-color: #f8f9fa;
+    }
+    
+    .places-tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 40px;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    .tab-btn {
+      padding: 15px 30px;
+      background: none;
+      border: none;
+      font-family: 'Tajawal', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--secondary-color);
+      cursor: pointer;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    
+    .tab-btn.active {
+      color: var(--primary-color);
+    }
+    
+    .tab-btn.active::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      background-color: var(--primary-color);
+      bottom: -1px;
+      left: 0;
+    }
+    
+    .tab-content {
+      display: none;
+    }
+    
+    .tab-content.active {
+      display: block;
+    }
+    
+    .places-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    
+    .place-card {
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .place-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    .place-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    
+    .place-info {
+      padding: 20px;
+    }
+    
+    .place-info h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: var(--dark-color);
+    }
+    
+    .place-meta {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      color: var(--secondary-color);
+      font-size: 0.9rem;
+    }
+    
+    .place-meta span {
+      display: flex;
+      align-items: center;
+      margin-left: 15px;
+    }
+    
+    .place-meta i {
+      margin-right: 5px;
+      color: var(--accent-color);
+    }
+    
+    .place-description {
+      color: #666;
+      margin-bottom: 15px;
+      font-size: 0.95rem;
+    }
+    
+    .place-rating {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    .stars {
+      color: var(--gold-color);
+      margin-left: 10px;
+    }
+    
+    .rating-number {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 3px 8px;
+      border-radius: 5px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+    
+    .view-btn {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .view-btn:hover {
+      background-color: #cc0000;
+    }
+    
+    /* Filter Section */
+    .filter-section {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+    
+    .filter-row {
+      display: flex;
+      gap: 20px;
+    }
+    
+    .filter-group {
+      flex: 1;
+      margin-bottom: 15px;
+    }
+    
+    .filter-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--dark-color);
+    }
+    
+    .filter-group select, 
+    .filter-group input {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-family: 'Tajawal', sans-serif;
+      font-size: 1rem;
+    }
+    
+    .filter-btn {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 5px;
+      font-family: 'Tajawal', sans-serif;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      align-self: flex-end;
+    }
+    
+    .filter-btn:hover {
+      background-color: #cc0000;
+    }
+    
+    /* Newsletter Section */
+    .newsletter {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 60px 0;
+      text-align: center;
+    }
+    
+    .newsletter h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    
+    .newsletter p {
+      max-width: 600px;
+      margin: 0 auto 30px;
+      font-size: 1.1rem;
+    }
+    
+    .newsletter-form {
+      display: flex;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    
+    .newsletter-form input {
+      flex: 1;
+      padding: 15px;
+      border: none;
+      border-radius: 5px 0 0 5px;
+      font-family: 'Tajawal', sans-serif;
+      font-size: 1rem;
+    }
+    
+    .newsletter-form button {
+      background-color: var(--gold-color);
+      color: var(--dark-color);
+      border: none;
+      padding: 0 25px;
+      border-radius: 0 5px 5px 0;
+      font-family: 'Tajawal', sans-serif;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .newsletter-form button:hover {
+      background-color: #e6c322;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: var(--dark-color);
+      color: white;
+      padding: 60px 0 20px;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    
+    .footer-column h3 {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .footer-column h3::after {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 3px;
+      background-color: var(--primary-color);
+      bottom: 0;
+      right: 0;
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-links a {
+      color: #ddd;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      color: var(--gold-color);
+      padding-right: 5px;
+    }
+    
+    .footer-contact p {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .footer-contact i {
+      margin-left: 10px;
+      color: var(--gold-color);
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      background-color: var(--primary-color);
+      transform: translateY(-3px);
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .hero-content h1 {
+        font-size: 2.8rem;
+      }
+      
+      .filter-row {
+        flex-direction: column;
+      }
+      
+      .filter-btn {
+        width: 100%;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+      }
+      
+      .logo {
+        margin-bottom: 15px;
+      }
+      
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      nav ul li {
+        margin: 5px 10px;
+      }
+      
+      .hero {
+        height: 60vh;
+      }
+      
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+      
+      .section-title h2 {
+        font-size: 2rem;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .hero-content h1 {
+        font-size: 1.8rem;
+      }
+      
+      .search-bar {
+        flex-direction: column;
+        background: none;
+        padding: 0;
+      }
+      
+      .search-bar input {
+        width: 100%;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        padding: 12px;
+      }
+      
+      .search-bar button {
+        width: 100%;
+        border-radius: 5px;
+      }
+      
+      .newsletter-form {
+        flex-direction: column;
+      }
+      
+      .newsletter-form input {
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+      
+      .newsletter-form button {
+        border-radius: 5px;
+        padding: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <div class="logo">
+        <div class="logo-text">
+          <h1>Visit UAE</h1>
+          <p>Discover the beauty of Dubai and Abu Dhabi</p>
+        </div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_United_Arab_Emirates.svg/1200px-Flag_of_the_United_Arab_Emirates.svg.png" alt="UAE Flag" style="height: 40px;">
+      </div>
+      
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#places">Places</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Explore the UAE: Where Dreams Come True</h1>
+      <p>Discover the best tourist destinations in the UAE, from skyscrapers to golden deserts</p>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="categories">
+    <div class="container">
+      <div class="section-title">
+        <h2>Discover the UAE</h2>
+      </div>
+      
+      <div class="categories-grid">
+        <div class="category-card">
+          <img src="https://www.dubaidet.gov.ae/-/media/det_downtown-dubai_always-on_4/det-dubai-frame-always-on-2.jpg?rev=9c8afb5a9fb04cc4bc932065de59f2c2&cx=0.5&cy=0.5&cw=500&ch=500" alt="Dubai">
+          <div class="category-overlay">
+            <h3>Dubai</h3>
+            <a href="https://maps.app.goo.gl/4qcN2ayzyo5CcBaW9">Explore <i class="fas fa-arrow-left"></i></a>
+          </div>
+        </div>
+        
+        <div class="category-card">
+          <img src="https://lh3.googleusercontent.com/gps-cs-s/AB5caB9HYvUvm6uwtdLvswTCcN5mV7HolePx64y58q1dCMAoq0Kk5KCpHAFU8Jst-jZVxjeUNvkrYlGH6yTiAzhkh8L58w1MDLeGzZtcaPkCj3R3AeYGNvIuoiCj6IHCcOyH5iKHbJGyQg=w408-h272-k-no" alt="Abu Dhabi">
+          <div class="category-overlay">
+            <h3>Abu Dhabi</h3>
+            <a href="https://maps.app.goo.gl/7yyQQHjhSSa8cA3s8">Explore <i class="fas fa-arrow-left"></i></a>
+          </div>
+        </div>
+        
+        <div class="category-card">
+          <img src="https://lh3.googleusercontent.com/gps-cs-s/AB5caB9ErWOTcGTRk7Rucsd85Yv4PIfBXV8xkXD8lbtHj22kFvGaeaWGHrDjRzC5KA00Nt9zFaZ_rUxW0MmCZcdjp0L4i8Ij1Y2urCW4vSkO3qxDcebvHovPn9GNDQjG6G1Rl3wyFeZTWA=w408-h272-k-no" alt="Sharjah">
+          <div class="category-overlay">
+            <h3>Sharjah</h3>
+            <a href="https://maps.app.goo.gl/x9qHgDjzNQRwjeYf7">Explore <i class="fas fa-arrow-left"></i></a>
+          </div>
+        </div>
+        
+        <div class="category-card">
+          <img src="https://lh3.googleusercontent.com/gps-cs-s/AB5caB_747-vNUIklkXQH3xp1tv198cNZ_qwYp7kxbqfWWFnmpMVlO1OG9GaoMQx5txmdnn9JFMhx3H0KwX4bVXVbLBQI0kzzex5AKq3vcquH2BJKx4E4-nLZPRccIIOjUhuoHeItI4qhg=w408-h293-k-no" alt="Ras Al Khaimah">
+          <div class="category-overlay">
+            <h3>Ras Al Khaimah</h3>
+            <a href="https://maps.app.goo.gl/RtaxSjUyX66SMubE6">Explore <i class="fas fa-arrow-left"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Places Section -->
+  <section class="places-section" id="places">
+    <div class="container">
+      <div class="section-title">
+        <h2>Best Places in the UAE</h2>
+      </div>
+      
+      <div class="places-tabs">
+        <button class="tab-btn active" data-tab="hotels">Hotels</button>
+        <button class="tab-btn" data-tab="restaurants">Restaurants</button>
+        <button class="tab-btn" data-tab="activities">Entertainment</button>
+      </div>
+      
+      <!-- Hotels Tab -->
+      <div class="tab-content active" id="hotels-tab">
+        <div class="places-grid">
+          <!-- Hotel 1 -->
+          <div class="place-card">
+            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/457401944.jpg?k=f554ce9e1de38e1f4ee9429356de24d274f5d87a55539a953cc8f7aeb2c54ad0&o=&hp=1" alt="Burj Al Arab">
+            <div class="place-info">
+              <h3>Burj Al Arab</h3>
+              <div class="place-meta">
+                <span><i class="fas fa-map-marker-alt"></i> Dubai</span>
+                <span><i class="fas fa-dollar-sign"></i> Luxury</span>
+              </div>
+              <p class="place-description">The only 7-star hotel in the world, offering an unparalleled luxury experience.</p>
+              <div class="place-rating">
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <span class="rating-number">9.8</span>
+              </div>
+              <a href="https://maps.app.goo.gl/vdFUJoWfx3JhiW5D7" class="view-btn">View Details</a>
+            </div>
+          </div>
+          
+          <!-- Hotel 2 -->
+          <div class="place-card">
+            <img src="https://lh3.googleusercontent.com/p/AF1QipO7EqGSWxDuJcJSx0lRRlZhnvo8TmN0OUtBvCVz=w408-h381-k-no" alt="Citymax Hotel Al Wahda">
+            <div class="place-info">
+              <h3>Citymax Hotel Al Wahda</h3>
+              <div class="place-meta">
+                <span><i class="fas fa-map-marker-alt"></i> Sharjah</span>
+                <span><i class="fas fa-dollar-sign"></i> Budget</span>
+              </div>
+              <p class="place-description">A hotel with beautiful, quiet quality.</p>
+              <div class="place-rating">
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span class="rating-number">8</span>
+              </div>
+              <a href="https://maps.app.goo.gl/Z1hgvgdEJbJnKmun8" class="view-btn">View Details</a>
+            </div>
+          </div>
+          
+          <!-- Hotel 3 -->
+          <div class="place-card">
+            <img src="https://lh3.googleusercontent.com/p/AF1QipOUrWSHsUZMJYN_RD8hyVIGgQ3fBMyoTXj6DpCF=w408-h253-k-no" alt="Emirates Palace">
+            <div class="place-info">
+              <h3>Emirates Palace</h3>
+              <div class="place-meta">
+                <span><i class="fas fa-map-marker-alt"></i> Abu Dhabi</span>
+                <span><i class="fas fa-dollar-sign"></i> Luxury</span>
+              </div>
+              <p class="place-description">A luxury hotel on a private 1.3 km beach, with a golf course and world-class spa.</p>
+              <div class="place-rating">
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span class="rating-number">9.5</span>
+              </div>
+              <a href="https://maps.app.goo.gl/3M2ETh1uGwv66UA2A" class="view-btn">View Details</a>
+            </div>
+          </div>
+          
+          <!-- Hotel 4 -->
+          <div class="place-card">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/78/1c/f2/resort-exterior.jpg?w=1200&h=-1&s=1" alt="Ras Al Khaimah Hotel">
+            <div class="place-info">
+              <h3>Ras Al Khaimah Hotel</h3>
+              <div class="place-meta">
+                <span><i class="fas fa-map-marker-alt"></i> Ras Al Khaimah</span>
+                <span><i class="fas fa-dollar-sign"></i> Moderate</span>
+              </div>
+              <p class="place-description">A resort featuring a water park and a massive aquarium.</p>
+              <div class="place-rating">
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <span class="rating-number">9</span>
+              </div>
+              <a href="https://maps.app.goo.gl/owVQ3pADXLEufNKy8" class="view-btn">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Restaurants Tab -->
+      <div class="tab-content" id="restaurants-tab">
+        <div class="places-grid">
+          <!-- Restaurant 1 -->
+          <div class="place-card">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Deira Palm">
+            <div class="place-info">
+              <h3>Deira Palm</h3>
+              <div class="place-meta">
+                <span><i class="fas fa-map-marker-alt"></i> Dubai</span>
+                <span><i class="fas fa-dollar-sign"></i> Luxury</span>
+              </div>
+              <p class="place-description">Serves traditional Emirati dishes in a modern setting with views of the creek.</p>
+              <div class="place-rating">
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <span class="rating-number">9.6</span>
+              </div>
+              <a href="https://maps.app.goo.gl/6bRM3E6tQphemE3Z9" class="view-btn">View Details</a>
+            </div>
+          </div>
+          
+          <!-- Restaurant 2 -->
+          <div class="place-card">
+            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Zahya">
+            <div class="place-info">
+              <h3>Zahya</h3>
+              <div class="place-meta">
+                <span><i class="fas fa-map-marker-alt"></i> Abu Dhabi</span>
+                <span><i class="fas fa-dollar-sign"></i> Luxury</span>
+              </div>
+              <p class="place-description">An upscale restaurant serving contemporary Arabic cuisine at Emirates Palace.</p>
+              <div class="place-rating">
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span class="rating-number">9.3</span>
+              </div>
+              <a href="https://maps.app.goo.gl/w24SBV3CogPYaVir9" class="view-btn">View Details</a>
+            </div>
+          </div>
+          
+          <!-- Restaurant 3 -->
+          <div class="place-card">
+            <img src="https://lh3.googleusercontent.com/p/AF1QipNKATnewVbFUcNXr9e9a6dx0EP2fy7fFtnZ5xHi=w408-h271-k-no" alt="UAE Sea Restaurant">
+            <div class="place-info">
+              <h3>UAE Sea Restaurant</h3>
+              <div class="place-meta">
+                <span><i class="fas fa-map-marker-alt"></i> Ras Al Khaimah</span>
+                <span><i class="fas fa-dollar-sign"></i> Moderate</span>
+              </div>
+              <p class="place-description">An upscale restaurant serving contemporary Arabic cuisine by the UAE sea.</p>
+              <div class="place-rating">
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span class="rating-number">8.3</span>
+              </div>
+              <a href="https://maps.app.goo.gl/vMmW8sutyQVFEceo9" class="view-btn">View Details</a>
+            </div>
+          </div>
+          
+          <!-- Restaurant 4 -->
+          <div class="place-card">
+            <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Al Bustan">
+            <div class="place-info">
+              <h3>Al Bustan</h3>
+              <div class="place-meta">
+                <span><i class="fas fa-map-marker-alt"></i> Sharjah</span>
+                <span><i class="fas fa-dollar-sign"></i> Moderate</span>
+              </div>
+              <p class="place-description">Offers a wide variety of oriental cuisine in a heritage atmosphere.</p>
+              <div class="place-rating">
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                </div>
+                <span class="rating-number">8.7</span>
+              </div>
+              <a href="https://maps.app.goo.gl/9k6p3Qvav2xa2AYU6" class="view-btn">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Activities Tab -->
+      <div class="tab-content" id="activities-tab">
+        <div class="places-grid">
+          <!-- Activity 1 -->
+          <div class="place-card">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AB5caB-v0wwv43_gbz3lrHy36vNdElGjWRuv4cYouK6pGI7YzvG-2dgjrI6ZKDfwICX0_hrftvJ6NztzFY0MXJc_dE12bUhYjOQAipnvsT167k1q1RC4qz-az0OwJhPq0IIc9ExG02420g=w408-h532-k-no" alt="Burj Khalifa">
+            <div class="place-info">
+              <h3>Burj Khalifa</h3>
+              <div class="place-meta">
+                <span><i class="fas fa-map-marker-alt"></i> Dubai</span>
+                <span><i class="fas fa-clock"></i> 8:30 AM - 11 PM</span>
+              </div>
+              <p class="place-description">The tallest building in the world at 828 meters, with an observation deck on the 148th floor.</p>
+              <div class="place-rating">
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span class="rating-number">9.7</span>
+              </div>
+              <a href="https://maps.app.goo.gl/FYWSA8dkQ5NuwSdQ9" class="view-btn">View Details</a>
+            </div>
+          </div>
+          
+          <!-- Activity 2 -->
+          <div class="place-card">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AB5caB_DEfV8symBoUtDmLJpOjBLNXok8PgFSfZfd8D2e_DzP0a_YbXLbVjERyZEHIk9xvbgSoi3TrVYLlDvopzb2flzzPcryqtZAEdny44mLNAFQncQLd26kTrZcwAJzkHqoip-DhHB5A=w408-h306-k-no" alt="Warner Bros">
+            <div class="place-info">
+              <h3>Warner Bros</h3>
+              <div class="place-meta">
+                <span><i class="fas fa-map-marker-alt"></i> Abu Dhabi</span>
+                <span><i class="fas fa-clock"></i> 9 AM - 10 PM</span>
+              </div>
+              <p class="place-description">An indoor amusement park featuring rides and shows based on Warner Brothers cartoon characters and superheroes.</p>
+              <div class="place-rating">
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <span class="rating-number">9</span>
+              </div>
+              <a href="https://maps.app.goo.gl/RcnZsirTNa7H93Dz7" class="view-btn">View Details</a>
+            </div>
+          </div>
+          
+          <!-- Activity 3 -->
+          <div class="place-card">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AB5caB8pyiv91vqRArEZuh-YRGlLMW6nf7z7PL05aTzRyjgeymnUVHv9JWZ5xdgudXS-to33obpvzraAHA2gDpMkbNKS_PJPKXyBPlP136-gyMcVHy_R_TYcIrQ2CA3Sf-QnPjuyueaO=w408-h306-k-no" alt="Sharjah Prison Island">
+            <div class="place-info">
+              <h3>Sharjah Prison Island</h3>
+              <div class="place-meta">
+                <span><i class="fas fa-map-marker-alt"></i> Sharjah</span>
+                <span><i class="fas fa-clock"></i> 9 AM - 10 PM</span>
+              </div>
+              <p class="place-description">A city of adventures and challenges.</p>
+              <div class="place-rating">
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <span class="rating-number">8.2</span>
+              </div>
+              <a href="https://maps.app.goo.gl/7mU36EDrULVbq8si6" class="view-btn">View Details</a>
+            </div>
+          </div>
+          
+          <!-- Activity 4 -->
+          <div class="place-card">
+            <img src="https://lh3.googleusercontent.com/gps-cs-s/AB5caB8dqKY4q0QmBGnFvN3LnxqRM7Rtr2414Bkb0E48G7YIGUM13P6uBQQ2Oun8vhkEV2g4V5-2vBN_TmzLzv4Mkf1wjX8WxEQ3dymdiLbgDqaJgVqjEMFEzrXyANz7qAiof1rO3vQQYg=w408-h544-k-no" alt="Dhayah Fort">
+            <div class="place-info">
+              <h3>Dhayah Fort</h3>
+              <div class="place-meta">
+                <span><i class="fas fa-map-marker-alt"></i> Ras Al Khaimah</span>
+                <span><i class="fas fa-clock"></i> Morning and evening tours</span>
+              </div>
+              <p class="place-description">Desert safari experience with camel riding, sand skiing, and Bedouin dinner.</p>
+              <div class="place-rating">
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span class="rating-number">8.5</span>
+              </div>
+              <a href="https://maps.app.goo.gl/6answsCgYJUb57m78" class="view-btn">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="newsletter">
+    <div class="container">
+      <h2>Subscribe to Our Newsletter</h2>
+      <p>Get the latest offers and updates about the best places in the UAE directly to your email</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email">
+        <button type="submit">Subscribe Now</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>About Visit UAE</h3>
+          <p>A comprehensive tourism platform aimed at introducing visitors to the best destinations, hotels, restaurants, and activities in the UAE.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#places">Places</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Tour Guide</h3>
+          <ul class="footer-links">
+            <li><a href="#">Top 10 Hotels</a></li>
+            <li><a href="#">Best Restaurants</a></li>
+            <li><a href="#">Tourist Attractions</a></li>
+            <li><a href="#">Family Activities</a></li>
+            <li><a href="#">Desert Trips</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Contact Us</h3>
+          <div class="footer-contact">
+            <p><i class="fas fa-map-marker-alt"></i> Tabuk, Saudi Arabia</p>
+            <p><i class="fas fa-phone"></i> +966 4 123 4567</p>
+            <p><i class="fas fa-envelope"></i> info@visit-uae.ae</p>
+          </div>
+        </div>
+      </div>
+      
+      <style>
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            background: transparent;
+            color: white;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            position: relative;
+            border: none;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .back-btn:hover {
+            color: #000;
+        }
+
+        .back-btn i {
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .back-btn:hover i {
+            transform: translateX(-5px);
+        }
+
+        .back-btn::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background-color: white;
+            transition: width 0.3s ease;
+        }
+
+        .back-btn:hover::after {
+            width: 100%;
+            right: auto;
+            left: 0;
+        }
+      </style>
+
+      <a href="index.html" class="back-btn">
+          Return to Home <i class="fas fa-arrow-left"></i>
+      </a>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Visit Saudi Arabia. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Tab Switching Functionality
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove active class from all buttons and contents
+        tabBtns.forEach(btn => btn.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+        
+        // Add active class to clicked button
+        btn.classList.add('active');
+        
+        // Show corresponding content
+        const tabId = btn.getAttribute('data-tab');
+        document.getElementById(`${tabId}-tab`).classList.add('active');
+      });
+    });
+    
+    // Filter Functionality (simplified)
+    const filterBtn = document.querySelector('.filter-btn');
+    
+    filterBtn.addEventListener('click', () => {
+      alert('Filters applied successfully!');
+      // In a real application, you would filter the displayed items here
+    });
+    
+    // Newsletter Form Submission
+    const newsletterForm = document.querySelector('.newsletter-form');
+    
+    newsletterForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = newsletterForm.querySelector('input').value;
+      if (email) {
+        alert(`Thank you for subscribing! The newsletter will be sent to ${email}`);
+        newsletterForm.reset();
+      } else {
+        alert('Please enter a valid email');
+      }
+    });
+  </script>
+</body>
+</html>
